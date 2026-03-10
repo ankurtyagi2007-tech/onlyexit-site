@@ -498,7 +498,7 @@
 /* ===== LIFE AT THE HOUSE — FACILITY GRID ===== */
 .facility-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
 @media (max-width: 1024px) {
@@ -560,7 +560,7 @@
 
 /* ===== CORVETTE SECTION ===== */
 .corvette__block {
-  text-align: center;
+  text-align: left;
 }
 .corvette__header {
   margin-bottom: var(--space-8);
@@ -583,9 +583,14 @@
   margin-bottom: var(--space-4);
 }
 .corvette__image {
-  border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: var(--space-8);
+}
+.corvette__image--fullbleed {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: var(--space-10);
+  margin-top: var(--space-2);
 }
 .corvette__image img {
   width: 100%;
@@ -594,7 +599,6 @@
 }
 .corvette__footer {
   max-width: 600px;
-  margin-inline: auto;
 }
 .corvette__sub {
   font-size: var(--text-base);
@@ -610,7 +614,6 @@
   line-height: 1.7;
   opacity: 0.85;
   max-width: 600px;
-  margin-inline: auto;
 }
 .corvette__disclaimer {
   font-size: var(--text-xs);
@@ -1699,4 +1702,382 @@
 }
 @media (max-width: 767px) {
   .desktop-only { display: none !important; }
+}
+
+/* ===== THESIS SECTION ===== */
+.thesis-section {
+  margin-bottom: var(--space-16);
+}
+.thesis__headline {
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+  max-width: 20ch;
+}
+.thesis__body {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 65ch;
+  margin-bottom: var(--space-4);
+}
+.thesis__body:last-child {
+  margin-bottom: 0;
+}
+
+/* Thesis 3-card grid (Why Now) */
+.thesis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+@media (max-width: 768px) {
+  .thesis-grid { grid-template-columns: 1fr; }
+}
+.thesis-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color var(--transition-interactive);
+}
+.thesis-card:hover {
+  border-color: var(--color-primary);
+}
+.thesis-card__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+}
+.thesis-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.thesis-card__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Frontier Problems */
+.thesis-frontier {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-12);
+}
+.thesis-frontier__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+  letter-spacing: -0.02em;
+}
+.thesis-frontier__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+@media (max-width: 768px) {
+  .thesis-frontier__grid { grid-template-columns: 1fr; }
+}
+.thesis-frontier__item {
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.thesis-frontier__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+.thesis-frontier__item p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+.thesis-frontier__closer {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ===== HOW IT WORKS / FUNNEL ===== */
+.funnel {
+  margin-top: var(--space-12);
+  position: relative;
+}
+.funnel__stage {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+.funnel__stage:last-child {
+  margin-bottom: 0;
+}
+.funnel__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 48px;
+}
+.funnel__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-bg);
+  position: relative;
+  z-index: 2;
+}
+.funnel__line {
+  width: 2px;
+  flex: 1;
+  background: var(--color-border);
+  margin-top: var(--space-2);
+  min-height: 40px;
+}
+.funnel__content {
+  padding-bottom: var(--space-2);
+  flex: 1;
+}
+.funnel__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+}
+.funnel__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Expanded stage (Collision Sprints) */
+.funnel__stage--expanded .funnel__content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+.funnel__stage--expanded .funnel__number {
+  background: var(--color-primary);
+  color: #000;
+  border-color: var(--color-primary);
+}
+.funnel__deliverables {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+.funnel__deliverables-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+.funnel__deliverables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.funnel__deliverables-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding-left: var(--space-6);
+  position: relative;
+}
+.funnel__deliverables-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.funnel__closer {
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+@media (max-width: 640px) {
+  .funnel__stage { gap: var(--space-4); }
+  .funnel__marker { width: 36px; }
+  .funnel__number { width: 36px; height: 36px; font-size: var(--text-xs); }
+  .funnel__stage--expanded .funnel__content { padding: var(--space-5); }
+}
+
+/* ===== VISUAL PRINCIPLES POLISH ===== */
+
+/* 1. Hero: Fix dead space below CTAs — add scroll indicator + tighten bottom */
+.section--hero {
+  padding-bottom: var(--space-8);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--space-16) + var(--space-8));
+}
+.hero__content {
+  padding-bottom: var(--space-4);
+}
+/* Subtle scroll indicator */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0.5;
+  animation: hero-scroll-bounce 2s ease-in-out infinite;
+}
+.hero__scroll-hint span {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero__scroll-hint svg {
+  color: var(--color-primary);
+}
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* 2. Hacker House: bump bg image opacity */
+.hacker-house__bg img {
+  opacity: 0.17;
+}
+
+/* 3. What You Get: Make first card (Exploration Grants) a featured hero card */
+.benefits-grid .benefit-card:first-child {
+  border-color: rgba(102, 255, 255, 0.25);
+  background: linear-gradient(135deg, rgba(102, 255, 255, 0.04) 0%, var(--color-surface-2, #1a1a1a) 100%);
+}
+.benefits-grid .benefit-card:first-child::before {
+  opacity: 1;
+}
+
+/* 4. Facility grid: Strengthen gradient overlay for text readability */
+.facility-card__overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.0) 100%);
+}
+
+/* 5. Corvette: Bump kicker text, add top divider between image and below-text */
+.corvette__kicker {
+  font-size: var(--text-base);
+  opacity: 0.9;
+  max-width: 650px;
+}
+.corvette__footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  max-width: 650px;
+}
+
+/* 6. Fly-in: Replace phone icon with plane styling (icon change in HTML) */
+/* Remove duplicate tag pills on mobile */
+@media (max-width: 768px) {
+  .flyin__includes { display: none; }
+}
+
+/* 7. Merch cards: Subtle background lift for dark products */
+.merch-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+.merch-card:hover {
+  border-color: rgba(102, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* 8. CTA Banner: Reduce excessive whitespace, add subtle bg treatment */
+.cta-banner {
+  padding-top: var(--space-16) !important;
+  padding-bottom: var(--space-16) !important;
+  background: linear-gradient(to bottom, var(--color-bg), rgba(102, 255, 255, 0.02), var(--color-bg)) !important;
+}
+.cta-banner__headline {
+  font-size: clamp(var(--text-xl), 5vw, var(--text-3xl));
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+.cta-banner__subtitle {
+  text-align: center;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+.cta-banner .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 9. Resource cards: Replace emoji icons with consistent styling */
+.resource-card__icon {
+  font-size: 28px;
+  margin-bottom: var(--space-3);
+  line-height: 1;
+}
+
+/* 10. FAQ: Constrain width for better readability */
+.faq-list {
+  max-width: 800px;
+}
+
+/* 11. Section transition: Stronger surface contrast */
+.section--surface {
+  background: #111111;
 }
